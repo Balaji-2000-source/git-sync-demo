@@ -1,0 +1,13 @@
+import json
+
+# Load data from JSON file
+with open("candidates.json", "r") as file:
+    candidates = json.load(file)
+
+# Filter selected candidates
+selected = [c for c in candidates if c.get("selected")]
+
+# Display details
+print("Selected Candidates:")
+for candidate in selected:
+    print(f"ID: {candidate['id']}, Name: {candidate['name']}, Score: {candidate['score']}")
